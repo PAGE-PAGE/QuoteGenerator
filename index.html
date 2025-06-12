@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор интернет-цитат</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="main">
+        <h1 class="main__title">Генератор интернет-цитат</h1>
+        <div class="main__img-wrap">
+            <img src="images/1.png" id="image" class="main__img show">
+        </div>
+        <div class="main__quote-wrap">
+        <p id="quote" class="main__quote show">Нельзя стоять, когда другие работают, собственно, тогда я и родился.</p>
+        </div> 
+        <button class="main__button" onclick="generateQoute()">Сгенерировать цитату</button>
+    </div>
+    <script>
+        let qoute = document.getElementById('qoute');
+        let part1 = [
+            'Кто рано встает, ',
+            'Не бойся ошибаться, ',
+            'Когда меня рожали, ',
+            'Каждый может кинуть камень в волка, ',
+            'Нельзя стоять, когда другие работают, ',
+            'Иногда, жизнь — это жизнь, ',
+        ];
+        let part2 = [
+            'тот потом пожалеет о своем решении.',
+            'собственно, тогда я и родился.',
+            'но не каждый может кинуть волка в камень.',
+            'надо лежать.',
+            'а ты в ней — иногда.',
+            'бойся не ошибаться.',
+        ];
+        
+        function generateQoute() {
+            let r_p1 = randomelement(part1);
+            let r_p2 = randomelement(part2);
+            let randomqoute = r_p1 + r_p2
+            quote.textContent = randomqoute;
+            function randomelement(array) {
+                let index = Math.floor(Math.random() * array.length);
+                return array[index]
+            }   
+        }   
+    </script>
+    
+</body>
+
+</html>
